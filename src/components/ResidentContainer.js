@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { ResidentInfo } from './ResidentInfo';
+import styles from './ResidentContainer.module.css';
 
 export const ResidentContainer = ({ residentUrl }) => {
 
@@ -17,15 +18,14 @@ export const ResidentContainer = ({ residentUrl }) => {
     }, [residentUrl])
 
     return (
-        <div>
+        <div className={styles.residentContainerCard}>
             {data && <ResidentInfo 
                 name={data.name} 
                 image={data.image} 
                 status={data.status} 
                 origin={data.origin.name} 
                 episode={data.episode.length} 
-            />}
-            
+            />} 
         </div>
     )
 }

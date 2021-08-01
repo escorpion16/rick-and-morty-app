@@ -7,10 +7,10 @@ export const ResidentInfo = ({ name, image, status, origin, episode }) => {
                 <img src={image} alt={name}  />
             </div>
             <div className={styles.residentInfoContent}>
-                <h5>Name: {name}</h5>
-                <h5>Status: {status}</h5>
-                <h5>Origin: {origin}</h5>
-                <h5># Episodes: {episode}</h5>
+                <p> <strong>Name:</strong> {name}</p>
+                <p> <strong>Status:</strong> {status}</p>
+                <p> <strong>Origin:</strong> {origin}</p>
+                <p> <strong># Episodes:</strong> {episode}</p>
             </div>  
         </div>
     )
