@@ -1,0 +1,42 @@
+.residentInfoContainer {
+    display: flex;
+    border: 2px solid #fff;
+    justify-content: space-between;
+    margin: 2rem;
+    width: 45vw;
+    height: 45vh;
+    border-radius: 10px;
+    box-sizing: border-box;
+}
+
+.residentInfoImg {
+    width: 50%;
+}
+
+.residentInfoImg img{
+    width: 100%;
+    height: auto;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+  }
+  @supports(object-fit: cover){
+      .residentInfoImg img{
+        height: 100%;
+        object-fit: cover;
+        object-position: center center;
+      }
+  }
+
+.residentInfoContent {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-evenly;
+    width: 45%;
+}
+
+.residentInfoContent h5 {
+    padding: 0;
+    margin: 0;
+    
+}

@@ -1,22 +1,36 @@
-import logo from './logo.svg';
+import { useEffect, useState } from 'react';
 import './App.css';
+import { LocationContainer } from './components/LocationContainer';
+
+import { SearchBox } from './components/SearchBox';
 
 function App() {
+
+  const [data , setData]  = useState([])
+  
+  const onSelect = (value) => {
+    console.log(value)
+    
+  }
+
+  useEffect(() => {
+    const miFunc = async() => {
+      const res = await fetch('https://rickandmortyapi.com/api/location')
+      .then( res => res.json())
+
+      console.log(res)
+      setData(res.results)
+    }
+
+    miFunc()
+  }, [])
+
+
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+        <SearchBox data={data} handleSelect={onSelect} />
+        <LocationContainer />
       </header>
     </div>
   );
