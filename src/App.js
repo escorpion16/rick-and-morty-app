@@ -7,22 +7,24 @@ import { SearchBox } from './components/SearchBox';
 function App() {
 
   const [data , setData]  = useState([])
-  
   const onSelect = (value) => {
     console.log(value)
     
   }
 
+  
   useEffect(() => {
+    
     const miFunc = async() => {
       const res = await fetch('https://rickandmortyapi.com/api/location')
       .then( res => res.json())
 
       console.log(res)
       setData(res.results)
+      
     }
-
     miFunc()
+  
   }, [])
 
 

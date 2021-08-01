@@ -3,10 +3,11 @@
     border: 2px solid #fff;
     justify-content: space-between;
     margin: 1rem;
-    width: 40%;
+    width: 45%;
     height: 25%;
     border-radius: 10px;
     box-sizing: border-box;
+    background-color: #323F50;
 }
 
 .residentInfoImg {
@@ -32,7 +33,9 @@
     flex-direction: column;
     text-align: start;
     justify-content: space-evenly;
-    width: 45%;
+    width: 50%;
+    padding: 1rem;
+    
 }
 
 .residentInfoContent p {
