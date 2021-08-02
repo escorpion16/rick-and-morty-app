@@ -1,6 +1,6 @@
 import styles from './LocationInfo.module.css';
 
-export const LocationInfo = ({name, type, dimension}) => {
+export const LocationInfo = ({name, type, dimension, residents}) => {
 
 
     return (
@@ -8,6 +8,7 @@ export const LocationInfo = ({name, type, dimension}) => {
             <p>Name: {name}</p>  
             <p>Type: {type}</p>
             <p>Dimension: {dimension}</p>
+            <p>Number of Residents: {residents}</p>
         </div>
     )
 }
