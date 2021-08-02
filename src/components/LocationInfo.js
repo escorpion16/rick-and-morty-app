@@ -5,10 +5,10 @@ export const LocationInfo = ({name, type, dimension, residents}) => {
 
     return (
         <div className={styles.locationInfoContainer}>
-            <p>Name: {name}</p>  
-            <p>Type: {type}</p>
-            <p>Dimension: {dimension}</p>
-            <p>Number of Residents: {residents}</p>
+            <p className={styles.neon} >Name: {name}</p>  
+            <p className={styles.neon} >Type: {type}</p>
+            <p className={styles.neon} >Dimension: {dimension}</p>
+            <p className={styles.neon} >Number of Residents: {residents}</p>
         </div>
     )
 }

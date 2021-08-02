@@ -1,0 +1,14 @@
+.searchBoxContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+
+.searchBoxContainer select {
+    width: 50%;
+    border: none;
+    height: 2rem;
+    border-radius: 5px;
+    font-size: 1.2rem;
+}
