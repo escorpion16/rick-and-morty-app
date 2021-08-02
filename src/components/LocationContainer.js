@@ -3,14 +3,14 @@ import { LocationInfo } from './LocationInfo';
 import { ResidentContainer } from './ResidentContainer';
 import styles from './LocationContainer.module.css';
 
-export const LocationContainer = ({name}) => {
+export const LocationContainer = ({ name }) => {
 
     const [ location, setLocation ] = useState(null)
-    const [random] = useState(Math.round(Math.random * (20 - 1) + 1))
-    const [universe, setUniverse] = useState('')
+    const [random] = useState(3)
+    const [universe, setUniverse] = useState("")
 
     useEffect(() => {
-        if(name){
+        if(name !== ""){
             setUniverse(name)
         }
     }, [name])
@@ -18,19 +18,19 @@ export const LocationContainer = ({name}) => {
     useEffect(() => {
 
         const miFuncDefault = async() => {
-            try{
-                const res = await fetch(`https://rickandmortyapi.com/api/location/${random}`)
-                .then( res => res.json())
+            
+            const url = `https://rickandmortyapi.com/api/location/${random}`;
+            const res = await fetch(url).then( res => res.json())
+    
+            setLocation(res.results)
         
-                setLocation(res.results)
-            }catch(error) {
-                throw Error(error)
-            }
         }
        
-        if(universe === '') {
+        if(universe === ""){
+
             miFuncDefault()
         }
+        
         // eslint-disable-next-line
     },[])
 
@@ -38,12 +38,11 @@ export const LocationContainer = ({name}) => {
         const miFunc = async() => {
           const res = await fetch(`https://rickandmortyapi.com/api/location/?name=${universe}`)
           .then( res => res.json())
-    
-          console.log(res)
+          
           setLocation(res.results[0])
         }
 
-        if(universe !== ''){
+        if(universe !== ""){
             miFunc()
         }
     

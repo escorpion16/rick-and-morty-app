@@ -9,7 +9,6 @@ export const ResidentContainer = ({ residentUrl }) => {
     useEffect(() => {
         const myFunc = async() => {
             const res = await fetch( residentUrl ).then(res => res.json())
-            console.log( res )
             setData(res)
         }
         

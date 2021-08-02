@@ -10,9 +10,8 @@ function App() {
   const [universe, setUniverse] = useState('')
 
   const onSelect = (value) => {
-    console.log(value)
-    setUniverse(value)
 
+    setUniverse(value)
   }
   
   useEffect(() => {
